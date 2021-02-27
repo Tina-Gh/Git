@@ -1,0 +1,28 @@
+(rebasing with conflicts:)
+
+1. (There are two branches: "master" and "bigtrouble")(Now, we pick a single file and change it differently in these two branches.)
+2. (Now, we do rebasing in the "bigtrouble" branch) git rebase master 
+3. (A conflict has happened) (Now we abort the "rebase") git rebase --abort
+4. (Resolving the conflicts) git mergetool (Now, choose which changes you wish to stay)
+5. git rebase --continue
+
+.........................................................................
+(rebasing and merging with no conflicts:) 
+
+1. (We do the changes in a file)
+2. (Now, we do rebasing in the "bigtrouble" branch) git rebase master
+3. (No conflicts, so we move forward) git checkout master
+4. git merge bigtrouble
+..........................................................................
+(Pull with rebase:)
+
+1. (To make sure we are syched) git pull origin master
+2. (Now we push) git push origin master 
+3. (Now, do some changes in a GitHub repository file such as "index.html")
+4. () git fetch origin master
+5. () git pull --rebase origin master
+6. git pull origin master
+7. git push origin master 
+..........................................................................
+
+ 
